@@ -1,0 +1,50 @@
+{% extends 'parts/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+<!-- header  -->
+{% block header %}
+<header>
+    <!--    header navbar    -->
+    <nav class="navbar navbar-expand-md ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""><i class="fas fa-bars navbar-icon"></i> </span>
+        </button>
+
+        <a class="navbar-brand " href="{% url 'home' %}">
+            <img class="img-fluid " src="{% static 'image/logo.png' %}" alt="logo">
+        </a>
+    </nav>
+</header>
+{% endblock %}
+
+{# content section #}
+{% block content %}
+<div class="form login">
+    <div class="form-content">
+        <div class="line"></div>
+        <header>Sign In</header>
+        <!--Register-->
+        <h2>Sign-up</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ register_form|crispy }}
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submi</button>
+
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+</div>
+{% endblock %}

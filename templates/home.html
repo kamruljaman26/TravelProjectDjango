@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'parts/base.html' %}
 {% load crispy_forms_filters %}
 {% load static %}
 
@@ -8,8 +8,34 @@
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
+<!-- header  -->
+{% block header %}
+<header>
+    <!--    header navbar    -->
+    <nav class="navbar navbar-expand-md ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""><i class="fas fa-bars navbar-icon"></i> </span>
+        </button>
+
+        <a class="navbar-brand " href="{% url 'home' %}">
+            <img class="img-fluid " src="{% static 'image/logo.png' %}" alt="logo">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-center  text-md-left signIn-button" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+{% endblock %}
+
 {# content section #}
 {% block content %}
+
 <!-- banner photo-->
 <section id="banner">
     <div class=" banner-container d-flex justify-content-center align-items-center">
