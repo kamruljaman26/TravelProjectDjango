@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% block title %} Trip Begin Travel Agency {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{# content section #}
+{% block content %}
+<!-- banner photo-->
+<section id="banner">
+    <div class=" banner-container d-flex justify-content-center align-items-center">
+        <div class="banner-content text-center">
+            <div class="button d-flex justify-content-center tabs_-sidebar">
+                <div class="btn  tabs__button tabs__button--active" data-for-tab="1">Flight</div>
+                <div class="btn tabs__button tabs__button--active " data-for-tab="2">Hotel</div>
+            </div>
+
+            <div class="bg-cp  tabs__content tabs__content--active " data-tab="1">
+                <div class="tabs">
+                    <div class="tabs_-sidebar">
+                        <button class="tabs__button  tabs__button--active " data-for-tab="3">One Way</button>
+                        <button class="tabs__button  tabs__button--active " data-for-tab="4">Rounded</button>
+                        <button class="tabs__button tabs__button--active " data-for-tab="5">Multy City</button>
+                    </div>
+
+                    <div class="tabs__content tabs__content--active" data-tab="3">
+                        <div class="d-flex align-items-center">
+                            <div class="item">
+                                <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 "> Form </label>
+                                <input class="form-control imp-width" list="datalistOptions"
+                                       id="exampleDataList" placeholder="Airport Or City">
+                                <datalist id="datalistOptions">
+                                    <option value="Dhaka-DAC">
+                                    <option value="Rajshahi-RJH">
+                                    <option value="Saidpur-SPD">
+                                    <option value="Jashore-JSR">
+                                    <option value="Barishal-BZL">
+                                    <option value="Chattogram-CGP">
+                                    <option value="Cox's Bazar-CGP">
+                                    </option>
+                                </datalist>
+                            </div>
+
+                            <div class="item">
+                                <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 "> To </label>
+                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                       placeholder="Airport Or City">
+                                <datalist id="datalistOptions">
+                                    <option value="Dhaka-DAC">
+                                    <option value="Rajshahi-RJH">
+                                    <option value="Saidpur-SPD">
+                                    <option value="Jashore-JSR">
+                                    <option value="Barishal-BZL">
+                                    <option value="Chattogram-CGP">
+                                    <option value="Cox's Bazar-CGP">
+                                </datalist>
+                            </div>
+
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3"> Depart</label>
+                                <input type="date" name="" id="" class="form-control">
+                            </div>
+
+                            <div class="item2">
+                                <label for="" class=" fw-bold fs-8"> Passenger </label> </br>
+                                <select class="form-select fw-bold fs-8 p-2 "
+                                        aria-label="Default select example">
+                                    <option value="1"> 2 Passenger</option>
+                                    <option selected> 1 Passenger</option>
+                                    <option value="2">3 Passenger</option>
+                                    <option value="3">4 Passenger</option>
+                                    <option value="4">5 Passengert</option>
+                                    <option svalue="5">Avobe 5 Passenger</option>
+                                </select>
+                            </div>
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3 mt-10 mb-1"> Cabin Calass </label>
+                                <select class="form-select fw-bold fs-8" aria-label="Default select example">
+                                    <option selected="1">Economy</option>
+                                    <option value="2">Business</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content " data-tab="4">
+                        <div class="d-flex align-items-center">
+                            <div class="item">
+                                <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 "> Form </label>
+                                <input class="form-control imp-width" list="datalistOptions"
+                                       id="exampleDataList" placeholder="Airport Or City">
+                                <datalist id="datalistOptions">
+                                    <option value="Dhaka-DAC">
+                                    <option value="Rajshahi-RJH">
+                                    <option value="Saidpur-SPD">
+                                    <option value="Jashore-JSR">
+                                    <option value="Barishal-BZL">
+                                    <option value="Chattogram-CGP">
+                                    <option value="Cox's Bazar-CGP">
+                                </datalist>
+                            </div>
+
+                            <div class="item">
+                                <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 "> To </label>
+                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                       placeholder="Airport Or City">
+                                <datalist id="datalistOptions">
+                                    <option value="Dhaka-DAC">
+                                    <option value="Rajshahi-RJH">
+                                    <option value="Saidpur-SPD">
+                                    <option value="Jashore-JSR">
+                                    <option value="Barishal-BZL">
+                                    <option value="Chattogram-CGP">
+                                    <option value="Cox's Bazar-CGP">
+                                </datalist>
+                            </div>
+
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3"> Depart</label>
+                                <input type="date" name="" id="" class="form-control">
+                            </div>
+
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3"> Return </label>
+                                <input type="date" name="" id="" class="form-control">
+                            </div>
+
+                            <div class="item2">
+                                <label for="" class=" fw-bold fs-8"> Passenger </label> </br>
+                                <select class="form-select fw-bold fs-8 p-2 "
+                                        aria-label="Default select example">
+                                    <option value="1"> 2 Passenger</option>
+                                    <option selected> 1 Passenger</option>
+                                    <option value="2">3 Passenger</option>
+                                    <option value="3">4 Passenger</option>
+                                    <option value="4">5 Passengert</option>
+                                    <option svalue="5">Avobe 5 Passenger</option>
+                                </select>
+                            </div>
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3 mt-10 mb-1"> Cabin Calass </label>
+                                <select class="form-select fw-bold fs-8" aria-label="Default select example">
+                                    <option selected="1">Economy</option>
+                                    <option value="2">Business</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content" data-tab="5">
+                        <div class="d-flex align-items-center">
+                            <div class="item">
+                                <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 "> Form </label>
+                                <input class="form-control imp-width" list="datalistOptions"
+                                       id="exampleDataList" placeholder="Airport Or City">
+                                <datalist id="datalistOptions">
+                                    <option value="Dhaka-DAC">
+                                    <option value="Rajshahi-RJH">
+                                    <option value="Saidpur-SPD">
+                                    <option value="Jashore-JSR">
+                                    <option value="Barishal-BZL">
+                                    <option value="Chattogram-CGP">
+                                    <option value="Cox's Bazar-CGP">
+                                </datalist>
+                            </div>
+
+                            <div class="item">
+                                <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 "> To </label>
+                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                       placeholder="Airport Or City">
+                                <datalist id="datalistOptions">
+                                    <option value="Dhaka-DAC">
+                                    <option value="Rajshahi-RJH">
+                                    <option value="Saidpur-SPD">
+                                    <option value="Jashore-JSR">
+                                    <option value="Barishal-BZL">
+                                    <option value="Chattogram-CGP">
+                                    <option value="Cox's Bazar-CGP">
+                                </datalist>
+                            </div>
+
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3"> Depart</label>
+                                <input type="date" name="" id="" class="form-control">
+                            </div>
+
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3"> Return </label>
+                                <input type="date" name="" id="" class="form-control">
+                            </div>
+                            <div class="item2">
+                                <label for="" class=" fw-bold fs-8"> Passenger </label> </br>
+
+                                <select class="form-select fw-bold fs-8 p-2 "
+                                        aria-label="Default select example">
+                                    <option value="1"> 2 Passenger</option>
+                                    <option selected> 1 Passenger</option>
+                                    <option value="2">3 Passenger</option>
+                                    <option value="3">4 Passenger</option>
+                                    <option value="4">5 Passengert</option>
+                                    <option svalue="5">Avobe 5 Passenger</option>
+                                </select>
+                            </div>
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3 mt-10 mb-1"> Cabin Calass </label>
+                                <select class="form-select fw-bold fs-8" aria-label="Default select example">
+                                    <option selected="1">Economy</option>
+                                    <option value="2">Business</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex align-items-center">
+
+                            <div class="item">
+                                <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 "> Form </label>
+                                <input class="form-control imp-width" list="datalistOptions"
+                                       id="exampleDataList" placeholder="Airport Or City">
+                                <datalist id="datalistOptions">
+                                    <option value="Dhaka-DAC">
+                                    <option value="Rajshahi-RJH">
+                                    <option value="Saidpur-SPD">
+                                    <option value="Jashore-JSR">
+                                    <option value="Barishal-BZL">
+                                    <option value="Chattogram-CGP">
+                                    <option value="Cox's Bazar-CGP">
+                                </datalist>
+                            </div>
+
+                            <div class="item">
+                                <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 "> To </label>
+                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                       placeholder="Airport Or City">
+                                <datalist id="datalistOptions">
+                                    <option value="Dhaka-DAC">
+                                    <option value="Rajshahi-RJH">
+                                    <option value="Saidpur-SPD">
+                                    <option value="Jashore-JSR">
+                                    <option value="Barishal-BZL">
+                                    <option value="Chattogram-CGP">
+                                    <option value="Cox's Bazar-CGP">
+                                </datalist>
+                            </div>
+
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3"> Depart</label>
+                                <input type="date" name="" id="" class="form-control">
+                            </div>
+
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3"> Return </label>
+                                <input type="date" name="" id="" class="form-control">
+                            </div>
+
+                            <div class="item2">
+                                <label for="" class=" fw-bold fs-8"> Passenger </label> </br>
+                                <select class="form-select fw-bold fs-8 p-2 "
+                                        aria-label="Default select example">
+                                    <option value="1"> 2 Passenger</option>
+                                    <option selected> 1 Passenger</option>
+                                    <option value="2">3 Passenger</option>
+                                    <option value="3">4 Passenger</option>
+                                    <option value="4">5 Passengert</option>
+                                    <option svalue="5">Avobe 5 Passenger</option>
+                                </select>
+                            </div>
+
+                            <div class="item">
+                                <label for="" class=" fw-bold fs-8 p-3 mt-10 mb-1"> Cabin Calass </label>
+                                <select class="form-select fw-bold fs-8" aria-label="Default select example">
+                                    <option selected="1">Economy</option>
+                                    <option value="2">Business</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center search-btn">
+                    <div class="search-btn">
+                        <button class="search-button">Search Flight</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3 bg-cp  tabs__content " data-tab="2">
+                <div class="d-flex">
+                    <div class="item">
+                        <label for="exampleDataList" class="form-label fw-bold fs-8 p-3 ">
+                            City/Hotel/Resort/Area </label>
+                        <input class="form-control imp-width" list="datalistOptions2" id="exampleDataList"
+                               placeholder="Airport Or City">
+                        <datalist id="datalistOptions2">
+                            <option value="Dhaka">
+                            <option value="Rajshahi">
+                            <option value="Rangpur">
+                            <option value="Kuakata">
+                            <option value="Sylhet">
+                            <option value="Barishal">
+                            <option value="Chattogram">
+                            <option value="Cox's Bazar">
+                        </datalist>
+                    </div>
+
+                    <div class="item">
+                        <label for="" class=" fw-bold fs-8 p-3"> Check In </label>
+                        <input type="date" name="" id="" class="form-control">
+                    </div>
+
+                    <div class="item">
+                        <label for="" class=" fw-bold fs-8 p-3"> Check Out </label>
+                        <input type="date" name="" id="" class="form-control">
+                    </div>
+
+                    <div class="item2">
+                        <label for="" class=" fw-bold fs-8"> Rooms </label> </br>
+                        <select class="form-select fw-bold fs-8 p-2 " aria-label="Default select example">
+                            <option selected> 1 Room</option>
+                            <option value="2">2 Room</option>
+                            <option value="2">3 Room</option>
+                            <option value="2">4 Room</option>
+                            <option value="2">5 Room</option>
+                        </select>
+                    </div>
+                    `
+                    <div class="item2">
+                        <label for="" class=" fw-bold fs-8"> Guests </label> </br>
+                        <select class="form-select fw-bold fs-8 p-2 " aria-label="Default select example">
+                            <option value="1"> 1 Guest</option>
+                            <option selected>2 Guest</option>
+                            <option value="2">3 Guest</option>
+                            <option value="3">4 Guest</option>
+                            <option value="4">5 Guest</option>
+                            <option svalue="5">Avobe 5 Guest</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center search-btn">
+                    <div class="search-btn">
+                        <button class="search-button">Search Hotel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="d-block d-xl-none rounded-2 bg-cp py-3 px-3">
+    </div>
+
+</section>
+{% endblock %}
+

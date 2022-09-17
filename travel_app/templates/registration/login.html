@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{# content section #}
+{% block content %}
+<div class="form login">
+
+    <div class="form-content">
+
+        <div class="line"></div>
+
+        <header>Sign In</header>
+
+        <form class="form-signin" method="post">
+            {% csrf_token %}
+
+            <div class="field input-field">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter username"
+                       required
+                       autofocus>
+            </div>
+
+            <div class="field input-field">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                       required>
+            </div>
+
+            <div class="form-link">
+                <a href="#" class="forgot-pass"> Forgot password </a>
+                <i class="bx bx-hide eye-icon"></i>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+            <div class="form-link">
+                <span> Already Have an Account? <a href="" class="signup-link"> Sign Up </a></span>
+            </div>
+
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+</div>
+{% endblock %}
